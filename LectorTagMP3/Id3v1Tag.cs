@@ -31,25 +31,25 @@ class Id3v1Tag
                 fs.Read(buffer, 0, 128);
 
                 
-                header = Encoding.UTF8.GetString(buffer, 0 ,3);
+                header = Encoding.UTF8.GetString(buffer, 0 ,3).TrimEnd('\0',' ');
 
                 
-                titulo = Encoding.UTF8.GetString(buffer, 3 ,30);
+                titulo = Encoding.UTF8.GetString(buffer, 3 ,30).TrimEnd('\0',' ');
 
                 
-                album = Encoding.UTF8.GetString(buffer, 63 ,30);
+                album = Encoding.UTF8.GetString(buffer, 63 ,30).TrimEnd('\0',' ');
 
                 
-                artista = Encoding.UTF8.GetString(buffer, 33 ,30);
+                artista = Encoding.UTF8.GetString(buffer, 33 ,30).TrimEnd('\0',' ');
 
                 
-                fecha = Encoding.UTF8.GetString(buffer, 93 ,4);
+                fecha = Encoding.UTF8.GetString(buffer, 93 ,4).TrimEnd('\0',' ');
 
                 
-                comentario = Encoding.UTF8.GetString(buffer, 97 ,30);
+                comentario = Encoding.UTF8.GetString(buffer, 97 ,30).TrimEnd('\0',' ');
 
                 
-                genero = Encoding.UTF8.GetString(buffer, 127, 1);
+                genero = Encoding.UTF8.GetString(buffer, 127, 1).TrimEnd('\0',' ');
 
             }
     }
